@@ -1,0 +1,313 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="소스 파일">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="헤더 파일">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="리소스 파일">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Scene">
+      <UniqueIdentifier>{98624303-2476-4418-83a8-383251a60d5b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object">
+      <UniqueIdentifier>{de329763-daa1-416c-8ae2-fbce1a4ce44a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="_Others">
+      <UniqueIdentifier>{fb221ad8-bc09-4304-9dff-14a0ad5d4c48}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameObject">
+      <UniqueIdentifier>{84e488f3-dcd7-4329-a1b3-8e55d1105491}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameObject\AvoidGame">
+      <UniqueIdentifier>{83e8c176-6124-4000-98b6-d9158b0e8321}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utility">
+      <UniqueIdentifier>{4655422c-7ef5-4cc1-a399-61a7351c6b64}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameObject\Fortress">
+      <UniqueIdentifier>{58b1126f-81f0-4e2d-925e-4034fb01e6a8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameObject\Arkanoid">
+      <UniqueIdentifier>{0a5eeb64-b03b-46bb-a67c-0aaf1a4e314e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameObject\Swipe">
+      <UniqueIdentifier>{cc775dee-0c01-4b87-868a-14e0cc686717}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\headers">
+      <UniqueIdentifier>{11f5b8f4-5455-4f20-9194-9a0f1b3aa957}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\cpps">
+      <UniqueIdentifier>{7f4ca87f-c9e0-438f-a566-366ab905d2d0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utility\headers">
+      <UniqueIdentifier>{995cf674-8e2a-436c-8fdf-63e1881e3b05}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utility\cpps">
+      <UniqueIdentifier>{7f16ab5f-9c0b-4da4-a9a1-fd4d5dcb3121}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Swipe">
+      <UniqueIdentifier>{ea0a52fa-e8af-450c-9224-e1624824c858}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Swipe\cpps">
+      <UniqueIdentifier>{287a7b0d-b05e-4af5-b649-807a794444e8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Swipe\headers">
+      <UniqueIdentifier>{f268127b-aa4a-49e8-99c1-130c70120810}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Framework.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Main.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="MainGame.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Circle.h">
+      <Filter>Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Point.h">
+      <Filter>Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>_Others</Filter>
+    </ClInclude>
+    <ClInclude Include="Targetver.h">
+      <Filter>_Others</Filter>
+    </ClInclude>
+    <ClInclude Include="Rect.h">
+      <Filter>Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Poo.h">
+      <Filter>GameObject\AvoidGame</Filter>
+    </ClInclude>
+    <ClInclude Include="Line.h">
+      <Filter>Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Tank.h">
+      <Filter>GameObject\Fortress</Filter>
+    </ClInclude>
+    <ClInclude Include="CannonBallManager.h">
+      <Filter>GameObject\Fortress</Filter>
+    </ClInclude>
+    <ClInclude Include="CannonBall.h">
+      <Filter>GameObject\Fortress</Filter>
+    </ClInclude>
+    <ClInclude Include="ArkaPlayer.h">
+      <Filter>GameObject\Arkanoid</Filter>
+    </ClInclude>
+    <ClInclude Include="ArkaBall.h">
+      <Filter>GameObject\Arkanoid</Filter>
+    </ClInclude>
+    <ClInclude Include="ArkaBrick.h">
+      <Filter>GameObject\Arkanoid</Filter>
+    </ClInclude>
+    <ClInclude Include="ArkaBrickManager.h">
+      <Filter>GameObject\Arkanoid</Filter>
+    </ClInclude>
+    <ClInclude Include="ArkanoidScene.h">
+      <Filter>Scene\headers</Filter>
+    </ClInclude>
+    <ClInclude Include="AvoidScene.h">
+      <Filter>Scene\headers</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionScene.h">
+      <Filter>Scene\headers</Filter>
+    </ClInclude>
+    <ClInclude Include="FortressScene.h">
+      <Filter>Scene\headers</Filter>
+    </ClInclude>
+    <ClInclude Include="PaintScene.h">
+      <Filter>Scene\headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene.h">
+      <Filter>Scene\headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector2.h">
+      <Filter>Utility\headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Collision.h">
+      <Filter>Utility\headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Time.h">
+      <Filter>Utility\headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Util.h">
+      <Filter>Utility\headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Swipe_Ball.h">
+      <Filter>Swipe\headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Swipe_BallManager.h">
+      <Filter>Swipe\headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Swipe_Brick.h">
+      <Filter>Swipe\headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Swipe_BrickManager.h">
+      <Filter>Swipe\headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Swipe_GameManager.h">
+      <Filter>Swipe\headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Swipe_Item.h">
+      <Filter>Swipe\headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Swipe_ItemManager.h">
+      <Filter>Swipe\headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Swipe_Palette.h">
+      <Filter>Swipe\headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Swipe_Particle.h">
+      <Filter>Swipe\headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Swipe_ParticleManager.h">
+      <Filter>Swipe\headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Swipe_Pool.h">
+      <Filter>Swipe\headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Swipe_UIManager.h">
+      <Filter>Swipe\headers</Filter>
+    </ClInclude>
+    <ClInclude Include="SwipeScene.h">
+      <Filter>Swipe</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Main.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Framework.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="MainGame.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Circle.cpp">
+      <Filter>Object</Filter>
+    </ClCompile>
+    <ClCompile Include="Point.cpp">
+      <Filter>Object</Filter>
+    </ClCompile>
+    <ClCompile Include="Rect.cpp">
+      <Filter>Object</Filter>
+    </ClCompile>
+    <ClCompile Include="Poo.cpp">
+      <Filter>GameObject\AvoidGame</Filter>
+    </ClCompile>
+    <ClCompile Include="Line.cpp">
+      <Filter>Object</Filter>
+    </ClCompile>
+    <ClCompile Include="Tank.cpp">
+      <Filter>GameObject\Fortress</Filter>
+    </ClCompile>
+    <ClCompile Include="CannonBallManager.cpp">
+      <Filter>GameObject\Fortress</Filter>
+    </ClCompile>
+    <ClCompile Include="CannonBall.cpp">
+      <Filter>GameObject\Fortress</Filter>
+    </ClCompile>
+    <ClCompile Include="ArkaPlayer.cpp">
+      <Filter>GameObject\Arkanoid</Filter>
+    </ClCompile>
+    <ClCompile Include="ArkaBall.cpp">
+      <Filter>GameObject\Arkanoid</Filter>
+    </ClCompile>
+    <ClCompile Include="ArkaBrick.cpp">
+      <Filter>GameObject\Arkanoid</Filter>
+    </ClCompile>
+    <ClCompile Include="ArkaBrickManager.cpp">
+      <Filter>GameObject\Arkanoid</Filter>
+    </ClCompile>
+    <ClCompile Include="ArkanoidScene.cpp">
+      <Filter>Scene\cpps</Filter>
+    </ClCompile>
+    <ClCompile Include="AvoidScene.cpp">
+      <Filter>Scene\cpps</Filter>
+    </ClCompile>
+    <ClCompile Include="CollisionScene.cpp">
+      <Filter>Scene\cpps</Filter>
+    </ClCompile>
+    <ClCompile Include="FortressScene.cpp">
+      <Filter>Scene\cpps</Filter>
+    </ClCompile>
+    <ClCompile Include="PaintScene.cpp">
+      <Filter>Scene\cpps</Filter>
+    </ClCompile>
+    <ClCompile Include="Collision.cpp">
+      <Filter>Utility\cpps</Filter>
+    </ClCompile>
+    <ClCompile Include="Time.cpp">
+      <Filter>Utility\cpps</Filter>
+    </ClCompile>
+    <ClCompile Include="Util.cpp">
+      <Filter>Utility\cpps</Filter>
+    </ClCompile>
+    <ClCompile Include="Vector2.cpp">
+      <Filter>Utility\cpps</Filter>
+    </ClCompile>
+    <ClCompile Include="Swipe_Ball.cpp">
+      <Filter>Swipe\cpps</Filter>
+    </ClCompile>
+    <ClCompile Include="Swipe_BallManager.cpp">
+      <Filter>Swipe\cpps</Filter>
+    </ClCompile>
+    <ClCompile Include="Swipe_Brick.cpp">
+      <Filter>Swipe\cpps</Filter>
+    </ClCompile>
+    <ClCompile Include="Swipe_BrickManager.cpp">
+      <Filter>Swipe\cpps</Filter>
+    </ClCompile>
+    <ClCompile Include="Swipe_GameManager.cpp">
+      <Filter>Swipe\cpps</Filter>
+    </ClCompile>
+    <ClCompile Include="Swipe_Item.cpp">
+      <Filter>Swipe\cpps</Filter>
+    </ClCompile>
+    <ClCompile Include="Swipe_ItemManager.cpp">
+      <Filter>Swipe\cpps</Filter>
+    </ClCompile>
+    <ClCompile Include="Swipe_Palette.cpp">
+      <Filter>Swipe\cpps</Filter>
+    </ClCompile>
+    <ClCompile Include="Swipe_Particle.cpp">
+      <Filter>Swipe\cpps</Filter>
+    </ClCompile>
+    <ClCompile Include="Swipe_ParticleManager.cpp">
+      <Filter>Swipe\cpps</Filter>
+    </ClCompile>
+    <ClCompile Include="Swipe_Pool.cpp">
+      <Filter>Swipe\cpps</Filter>
+    </ClCompile>
+    <ClCompile Include="Swipe_UIManager.cpp">
+      <Filter>Swipe\cpps</Filter>
+    </ClCompile>
+    <ClCompile Include="SwipeScene.cpp">
+      <Filter>Swipe</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Project.rc">
+      <Filter>리소스 파일</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="small.ico">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Project.ico">
+      <Filter>리소스 파일</Filter>
+    </Image>
+  </ItemGroup>
+</Project>
