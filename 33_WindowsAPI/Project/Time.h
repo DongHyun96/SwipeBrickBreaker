@@ -12,6 +12,7 @@ public:
 public:
 	void Update();
 	void Render(); // backDC에 그릴 것이고 전역
+	void Render(HDC hdc);
 
 	static float Delta() { return timeElapsed; }
 

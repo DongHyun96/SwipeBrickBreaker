@@ -10,9 +10,9 @@ public:
 	virtual void Render(HDC hdc) override;
 
 private:
-
 	void RenderEnvironment(HDC hdc);
-	
+
+private:
 	void HandleFire();
 	bool IsFireable();
 
@@ -28,6 +28,9 @@ private:
 	void HandleCollision(const vector<Swipe_Ball*>& balls, vector<Swipe_Item*>& items);
 
 private:
+	bool HandleRestartGame();
+
+private:
 
 	Line* ceil = nullptr;
 	Line* floor = nullptr;
@@ -35,8 +38,9 @@ private:
 
 private:
 	Swipe_BallManager* ballManager = nullptr;
+
 	float fireTime = 0.f;
-	float fireTick = 0.05f;
+	const float fireTick = 0.05f;
 	//float fireTick = 0.025f;
 
 	UINT fireCnt = 0;

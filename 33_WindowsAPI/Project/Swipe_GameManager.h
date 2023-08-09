@@ -46,6 +46,9 @@ public:
 
 	set<Point>& GetBallPosSet() { return ballPosSet; }
 
+public:
+	void InitGame();
+
 private:
 	GameState gameState = INIT;
 	UINT level = 0;

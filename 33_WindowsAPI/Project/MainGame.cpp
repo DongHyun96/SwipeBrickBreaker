@@ -56,4 +56,5 @@ void MainGame::Render(HDC hdc)
 	(
 		hdc, 0, 0, WIN_WIDTH, WIN_HEIGHT, backDC, 0, 0, SRCCOPY
 	);
+
 }

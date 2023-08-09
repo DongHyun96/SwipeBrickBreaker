@@ -47,7 +47,7 @@ void SwipeScene::Update()
 
 			Swipe_UIManager::GetInst()->SetLevel(Swipe_GameManager::GetInst()->GetLevel());
 			
-			ballManager->Init();
+			ballManager->InitRound();
 
 			InitBrickAndItem();
 
@@ -55,7 +55,7 @@ void SwipeScene::Update()
 
 			Swipe_UIManager::GetInst()->SetPlayerDirStart(ballStartPos);
 			Swipe_UIManager::GetInst()->SetBricks(brickManager->GetBricks());
-			Swipe_UIManager::GetInst()->SetBallCnt(ballManager->GetBalls().size(), ballStartPos.x);
+			Swipe_UIManager::GetInst()->SetBallInfo(ballManager->GetBalls().size(), ballStartPos.x); // 볼 사이즈와 ballStartPos 한번에 넘김
 			
 			initStarted = true;
 		}
@@ -67,6 +67,7 @@ void SwipeScene::Update()
 			if (brickManager->IsGameOver())
 			{
 				Swipe_GameManager::GetInst()->SetGameState(GAMEOVER);
+				initStarted = false;
 				break;
 			}
 
@@ -108,10 +109,22 @@ void SwipeScene::Update()
 
 		if (timer >= 1.3f && !brickDestroyed)
 		{
+			timer -= 1.3f;
 			brickManager->DestroyAllBricks();
 			itemManager->DestroyAllItems();
 			Swipe_UIManager::GetInst()->SetGameOverAnimFinished(true);
 			brickDestroyed = true;
+		}
+
+		if (brickDestroyed && timer >= 1.0f)
+		{
+			if (HandleRestartGame())
+			{
+				timer = 0.f;
+				floorDestroyed = false;
+				brickDestroyed = false;
+			}
+
 		}
 	}
 		break;
@@ -364,4 +377,18 @@ void SwipeScene::HandleCollision(const vector<Swipe_Ball*>& balls, vector<Swipe_
 			}
 		}
 	}
+}
+
+bool SwipeScene::HandleRestartGame()
+{
+	if (GetAsyncKeyState('R'))
+	{
+		Swipe_GameManager::GetInst()->InitGame();
+		Swipe_UIManager::GetInst()->InitUI();
+		ballManager->InitGameStart();
+
+		return true;
+	}
+
+	return false;
 }

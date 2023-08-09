@@ -13,6 +13,12 @@
 #include <map>
 #include <string>
 #include <set>
+#include <dwmapi.h>
+
+#include <thread>
+#include <mutex>
+#include <condition_variable>
+#include <atomic>
 
 using namespace std;
 
@@ -117,3 +123,4 @@ using namespace std;
 extern HWND		hWnd; // 어딘가 이게 있으니 여기에 전방선언 한다
 extern Point	mousePos;
 extern HDC		backDC;
+extern HDC		hdc;	// Main DC

@@ -27,7 +27,7 @@ public:
 	void AddBallCnt(const int& amount) { ballCnt += amount; }
 
 	void SetBallCnt(const UINT& cnt) { ballCnt = cnt; }
-	void SetBallCnt(const UINT& cnt, const float& xPos);
+	void SetBallInfo(const UINT& cnt, const float& xPos);
 	void SetBallCntPosX(const float& xPos) { ballCntPos.x = xPos; }
 
 	void SetLevel(const UINT& level) { this->level = level; }
@@ -38,6 +38,9 @@ public:
 	void SetBricks(const vector<Swipe_Brick*>& bricks) { this->bricks = bricks; }
 
 	void SetGameOverAnimFinished(const bool& finished) { this->isGameOverAnimFin = finished; }
+
+public:
+	void InitUI(); // Used for restarting game
 
 private:
 	/// <summary>

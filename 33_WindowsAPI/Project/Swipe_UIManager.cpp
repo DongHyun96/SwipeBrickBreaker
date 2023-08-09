@@ -91,10 +91,15 @@ void Swipe_UIManager::RenderPlayerDir(HDC hdc)
 	sampleBall->Render(hdc);
 }
 
-void Swipe_UIManager::SetBallCnt(const UINT& cnt, const float& xPos)
+void Swipe_UIManager::SetBallInfo(const UINT& cnt, const float& xPos)
 {
 	ballCnt = cnt;
 	ballCntPos.x = xPos;
+}
+
+void Swipe_UIManager::InitUI()
+{
+	isGameOverAnimFin = false;
 }
 
 bool Swipe_UIManager::HandleSampleBallCollision()

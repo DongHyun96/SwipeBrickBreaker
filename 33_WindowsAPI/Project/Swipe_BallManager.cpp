@@ -66,7 +66,7 @@ void Swipe_BallManager::Render(const HDC& hdc)
 		ball->Render(hdc);
 }
 
-void Swipe_BallManager::Init()
+void Swipe_BallManager::InitRound()
 {
 	UINT end = fieldBalls.size() + Swipe_GameManager::GetInst()->GetItemEarned();
 
@@ -102,10 +102,20 @@ bool Swipe_BallManager::IsRoundOver()
 	return true;
 }
 
-
-void Swipe_BallManager::Spawn(Point spawnPos)
+void Swipe_BallManager::InitGameStart()
 {
-	Init();
+	for (Swipe_Ball* ball : fieldBalls)
+		ball->SetActive(false);
+
+	fieldBalls.clear();
+
+	fieldBalls.push_back(pool[0]);
+}
+
+
+void Swipe_BallManager::Spawn(Point spawnPos) // TO DO : Do not use this method
+{
+	InitRound();
 }
 
 void Swipe_BallManager::Fire(Vector2 direction)

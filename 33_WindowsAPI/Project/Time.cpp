@@ -68,3 +68,14 @@ void Time::Render()
 	TextOut(backDC, 0, 20, str.c_str(), str.size());
 }
 
+void Time::Render(HDC hdc)
+{
+	wstring str;
+
+	str = L"RunningTime : " + to_wstring((int)runningTime);
+	TextOut(hdc, 0, 0, str.c_str(), str.size());
+
+	str = L"FPS : " + to_wstring((int)frameRate);
+	TextOut(hdc, 0, 20, str.c_str(), str.size());
+}
+
