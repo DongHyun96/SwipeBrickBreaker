@@ -46,15 +46,19 @@ public:
 
 	set<Point>& GetBallPosSet() { return ballPosSet; }
 
+	UINT GetBestLevelReached() const { return bestLevelReached; }
+	void SetBestLevelReached(const UINT& level) { this->bestLevelReached = level; }
+
 public:
 	void InitGame();
 
 private:
 	GameState gameState = INIT;
+
 	UINT level = 0;
-	
+	UINT bestLevelReached = 0;
+
 	UINT itemEarned = 0;
-	//UINT itemEarned = 5; // testing
 
 	Point ballStartPos = { WIN_WIDTH * 0.5, SWIPE_FLOOR - 11 };
 
