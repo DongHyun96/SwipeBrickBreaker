@@ -239,7 +239,13 @@ bool SwipeScene::IsFireable()
 
 void SwipeScene::InitBrickAndItem()
 {
-	UINT brickRandCnt = GetRandom(1, 5); // 1 ~ 5
+	// 레벨 80 이상이면 3 ~ 5개 스폰
+	// 레벨 120 이상이면 4 ~ 5개 스폰
+
+	UINT level = Swipe_GameManager::GetInst()->GetLevel();
+
+	UINT brickRandCnt = (level < 80) ? GetRandom(1, 5) :
+		               (level < 120) ? GetRandom(3, 5) : GetRandom(4, 5);
 
 	// 0 ~ 5 중 랜덤한 위치에 브릭을 뽑아야 함
 	vector<UINT> picked = {};	// 브릭의 랜덤한 ids
