@@ -59,11 +59,7 @@ void Swipe_UIManager::Render(HDC hdc)
 
 	if (Swipe_GameManager::GetInst()->GetGameState() == GAMEOVER)
 	{
-		if (isGameOverAnimFin)
-		{
-			wstring gameOverPhrase = L"GAME OVER!";
-			TextOut(hdc, WIN_CENTER.x, WIN_CENTER.y, gameOverPhrase.c_str(), gameOverPhrase.size());
-		}
+		RenderGameOver(hdc);
 		return;
 	}
 
@@ -185,4 +181,24 @@ bool Swipe_UIManager::HandleCollisionWall()
 	}
 
 	return false;
+}
+
+void Swipe_UIManager::RenderGameOver(HDC hdc)
+{
+	if (isGameOverAnimFin)
+	{
+		wstring gameOverPhrase = L"GAME OVER!";
+		TextOut(hdc, WIN_CENTER.x, WIN_CENTER.y * 0.8f, gameOverPhrase.c_str(), gameOverPhrase.size());
+
+		COLORREF prevColor = SetTextColor(hdc, RGB(197, 22, 5));
+		
+		wstring bestLevelStr = L"BEST LV : " + to_wstring(Swipe_GameManager::GetInst()->GetBestLevelReached());
+		TextOut(hdc, WIN_CENTER.x, WIN_CENTER.y, bestLevelStr.c_str(), bestLevelStr.size());
+
+		SetTextColor(hdc, prevColor);
+
+		wstring restartPhrase = L"PRESS R TO RESTART";
+		TextOut(hdc, WIN_CENTER.x, WIN_CENTER.y * 1.2f, restartPhrase.c_str(), restartPhrase.size());
+
+	}
 }

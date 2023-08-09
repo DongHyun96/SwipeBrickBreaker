@@ -50,6 +50,8 @@ private:
 	bool HandleCollisionBricks();
 	bool HandleCollisionWall();
 
+	void RenderGameOver(HDC hdc);
+
 private:
 	int ballCnt = 1;
 	Point ballCntPos = {WIN_CENTER.x, SWIPE_FLOOR + 10};

@@ -113,6 +113,13 @@ void SwipeScene::Update()
 			brickManager->DestroyAllBricks();
 			itemManager->DestroyAllItems();
 			Swipe_UIManager::GetInst()->SetGameOverAnimFinished(true);
+
+			UINT currentLv = Swipe_GameManager::GetInst()->GetLevel();
+			UINT bestLv = Swipe_GameManager::GetInst()->GetBestLevelReached();
+
+			if (currentLv > bestLv)
+				Swipe_GameManager::GetInst()->SetBestLevelReached(currentLv);
+
 			brickDestroyed = true;
 		}
 
