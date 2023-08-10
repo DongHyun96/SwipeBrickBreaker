@@ -183,6 +183,9 @@
     <ClInclude Include="SwipeScene.h">
       <Filter>Swipe</Filter>
     </ClInclude>
+    <ClInclude Include="Swipe_GameData.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -295,6 +298,9 @@
     </ClCompile>
     <ClCompile Include="SwipeScene.cpp">
       <Filter>Swipe</Filter>
+    </ClCompile>
+    <ClCompile Include="Swipe_GameData.cpp">
+      <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

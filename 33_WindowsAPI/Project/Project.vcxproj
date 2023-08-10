@@ -162,6 +162,7 @@
     <ClInclude Include="Swipe_BallManager.h" />
     <ClInclude Include="Swipe_Brick.h" />
     <ClInclude Include="Swipe_BrickManager.h" />
+    <ClInclude Include="Swipe_GameData.h" />
     <ClInclude Include="Swipe_GameManager.h" />
     <ClInclude Include="Swipe_Item.h" />
     <ClInclude Include="Swipe_ItemManager.h" />
@@ -207,6 +208,7 @@
     <ClCompile Include="Swipe_BallManager.cpp" />
     <ClCompile Include="Swipe_Brick.cpp" />
     <ClCompile Include="Swipe_BrickManager.cpp" />
+    <ClCompile Include="Swipe_GameData.cpp" />
     <ClCompile Include="Swipe_GameManager.cpp" />
     <ClCompile Include="Swipe_Item.cpp" />
     <ClCompile Include="Swipe_ItemManager.cpp" />
