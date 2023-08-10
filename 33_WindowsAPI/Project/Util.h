@@ -44,4 +44,35 @@ static float Lerp(float src, float dst, float alpha)
     return (1 - alpha) * src + alpha * dst;
 }
 
+/*
+void SerializeGameData(const GameData& data, const char* fileName) {
+    std::ofstream file(fileName, std::ios::binary);
+    if (file.is_open()) {
+        file.write(reinterpret_cast<const char*>(&data), sizeof(data));
+        file.close();
+    }
+}
+
+bool DeserializeGameData(GameData& data, const char* fileName) {
+    std::ifstream file(fileName, std::ios::binary);
+    if (file.is_open()) {
+        file.read(reinterpret_cast<char*>(&data), sizeof(data));
+        file.close();
+        return true;
+    }
+    return false;
+}
+*/
+
+template <typename T>
+static void SerializeGameData(const T& data, const char& fileName = "saved_data.bin")
+{
+    ofstream file(fileName, ios::binary);
+
+    if (file.is_open())
+    {
+        //file.write(reinterpret_pointer_cast)
+    }
+}
+
 static TCHAR lpOut[1024];
