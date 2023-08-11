@@ -36,7 +36,7 @@ private:
 	Line* floor = nullptr;
 	Rect* background = nullptr;
 
-private:
+private: // BALL MANAGER
 	Swipe_BallManager* ballManager = nullptr;
 
 	float fireTime = 0.f;
@@ -46,7 +46,7 @@ private:
 	UINT fireCnt = 0;
 	Vector2 fireDir = {};
 
-private:
+private: // BRICK MANAGER & ITEM MANAGER
 	Swipe_BrickManager* brickManager = nullptr;
 	Swipe_ItemManager* itemManager = nullptr;
 

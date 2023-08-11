@@ -14,6 +14,68 @@ enum AnimState
 	POSITIONING
 };
 
+class Swipe_BrickManager;
+class Swipe_ItemManager;
+
+struct Swipe_GameData
+{
+	Swipe_GameData() {}
+
+	Swipe_GameData(
+		GameState gameState,
+		UINT level,
+		UINT bestLevelReached,
+		UINT itemEarned,
+		Point ballStartPos,
+		Swipe_BrickManager* brickMgr, Swipe_ItemManager* itemMgr)
+		:
+		gameState(gameState),
+		level(level),
+		bestLevelReached(bestLevelReached),
+		itemEarned(itemEarned),
+		ballStartPos(ballStartPos),
+		brickManager(brickMgr), itemManager(itemMgr)
+	{
+	}
+
+	~Swipe_GameData()
+	{
+		if (brickManager)
+			delete brickManager;
+
+		if (itemManager)
+			delete itemManager;
+	}
+
+	// GameManager data
+	GameState gameState;
+	UINT level;
+	UINT bestLevelReached;
+	UINT itemEarned;
+	Point ballStartPos;
+
+	// Brick data
+	Swipe_BrickManager* brickManager = nullptr;
+
+	// Item data
+	Swipe_ItemManager* itemManager = nullptr;
+
+	template <class Archive>
+	void serialize(Archive& ar, const UINT version) 
+	{
+		// GameManager Data
+		ar& gameState;
+		ar& level;
+		ar& bestLevelReached;
+		ar& itemEarned;
+		ar& ballStartPos;
+
+		ar& brickManager; // Brick Data
+		ar& itemManager; // Item Data
+	}
+
+};
+
 class Swipe_GameManager
 {
 private:
@@ -52,7 +114,21 @@ public:
 public:
 	void InitGame();
 
+public:
+	const bool& PrevDataExist() const { return prevDataExist; }
+
+	const Swipe_GameData& GetGameData() const { return gameData; }
+
+	template <class Archive>
+	void serialize(Archive& ar, const UINT version);
+
 private:
+
+	bool prevDataExist = false;
+	Swipe_GameData gameData;
+
+private:
+
 	GameState gameState = INIT;
 
 	UINT level = 0;
@@ -64,3 +140,13 @@ private:
 
 	set<Point> ballPosSet = {}; // 모든 fieldBall들의 position을 담을 것임
 };
+
+template<class Archive>
+inline void Swipe_GameManager::serialize(Archive& ar, const UINT version)
+{
+	ar& gameState;
+	ar& level;
+	ar& bestLevelReached;
+	ar& itemEarned;
+	ar& ballStartPos;
+}

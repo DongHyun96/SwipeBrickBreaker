@@ -9,16 +9,21 @@
 // Windows 헤더 파일
 #include <windows.h>
 #include <time.h>
+
+#include<iostream>
+#include <fstream>
+
+#include <boost/archive/text_oarchive.hpp>
+#include <boost/archive/text_iarchive.hpp>
+#include <boost/serialization/vector.hpp>
+
 #include <vector>
 #include <map>
 #include <string>
 #include <set>
 #include <dwmapi.h>
 
-#include <thread>
-#include <mutex>
-#include <condition_variable>
-#include <atomic>
+
 
 using namespace std;
 
@@ -91,6 +96,7 @@ using namespace std;
 #include "Swipe_Palette.h"
 
 #include "Swipe_UIManager.h"
+
 #include "Swipe_GameManager.h"
 #include "Swipe_Pool.h"
 
@@ -107,7 +113,6 @@ using namespace std;
 #include "Swipe_Item.h"
 #include "Swipe_ItemManager.h"
 
-
 // Scene
 #include "Scene.h"
 #include "PaintScene.h"
@@ -119,7 +124,6 @@ using namespace std;
 
 #include "MainGame.h"
 
-#include "Swipe_GameData.h"
 
 // extern - 전역변수를 뿌려주는 키워드
 extern HWND		hWnd; // 어딘가 이게 있으니 여기에 전방선언 한다

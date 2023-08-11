@@ -1,9 +1,22 @@
 #include "Framework.h"
 #include "Swipe_GameManager.h"
 
-
 Swipe_GameManager::Swipe_GameManager()
 {
+	Swipe_GameData loadedData;
+
+	ifstream file("data.txt");
+
+	// Check for saved data
+	if (!file.is_open())
+		return;
+
+	boost::archive::text_iarchive ia(file);
+	ia >> loadedData;
+
+	file.close();
+
+	prevDataExist = true;
 }
 
 Swipe_GameManager::~Swipe_GameManager()

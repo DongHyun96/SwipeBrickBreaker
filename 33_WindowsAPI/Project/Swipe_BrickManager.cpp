@@ -2,6 +2,10 @@
 #include "Swipe_BrickManager.h"
 
 
+Swipe_BrickManager::Swipe_BrickManager()
+{
+}
+
 Swipe_BrickManager::Swipe_BrickManager(UINT poolCnt)
 {
 	for (UINT i = 0; i < SWIPE_COL_CNT * SWIPE_ROW_CNT; i++)

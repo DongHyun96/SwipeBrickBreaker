@@ -2,24 +2,51 @@
 #include "SwipeScene.h"
 
 
-SwipeScene::SwipeScene()
+SwipeScene::SwipeScene() // TODO - 게임매니저에서 데이터 확인해서 받아오기
 {
 	ceil = new Line(Point(0, SWIPE_CEIL), Point(WIN_WIDTH, SWIPE_CEIL));
 	floor = new Line(Point(0, SWIPE_FLOOR), Point(WIN_WIDTH, SWIPE_FLOOR));
 
 	background = new Rect(WIN_CENTER, Point(WIN_WIDTH, WIN_HEIGHT));
 
+	// 게임 데이터가 남아있는지 체크
+	if (Swipe_GameManager::GetInst()->PrevDataExist())
+	{
+		
+	}
+
 	ballManager = new Swipe_BallManager;
 
-	brickManager = new Swipe_BrickManager;
+	brickManager = new Swipe_BrickManager(54);
 
-	itemManager = new Swipe_ItemManager;
+	itemManager = new Swipe_ItemManager(54);
 
 	font = Swipe_Palette::GetInst()->GetFont();
 }
 
 SwipeScene::~SwipeScene()
 {
+	// 게임이 끝날 때 데이터 저장하기
+	ofstream file("data.txt");
+
+	if (file.is_open())
+	{
+		Swipe_GameData data(
+			Swipe_GameManager::GetInst()->GetGameState(),
+			Swipe_GameManager::GetInst()->GetLevel(),
+			Swipe_GameManager::GetInst()->GetBestLevelReached(),
+			Swipe_GameManager::GetInst()->GetItemEarned(),
+			Swipe_GameManager::GetInst()->GetBallStartPos(),
+			brickManager, itemManager
+		);
+		
+		boost::archive::text_oarchive oa(file);
+
+		oa << data;
+
+		file.close();
+	}
+
 	delete ceil;
 	delete floor;
 	delete background;

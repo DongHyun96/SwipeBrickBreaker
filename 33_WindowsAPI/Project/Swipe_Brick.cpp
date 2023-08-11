@@ -1,6 +1,10 @@
 #include "Framework.h"
 #include "Swipe_Brick.h"
 
+Swipe_Brick::Swipe_Brick()
+{
+}
+
 Swipe_Brick::Swipe_Brick(Point pos)
 {
 	body = new Rect(pos, BRICK_SIZE);

@@ -3,7 +3,7 @@
 class Swipe_Brick
 {
 public:
-
+	Swipe_Brick();
 	Swipe_Brick(Point pos);
 
 	~Swipe_Brick();
@@ -25,6 +25,9 @@ public:
 
 	int GetHP() const { return hp; }
 
+	template<class Archive>
+	void serialize(Archive& ar, const UINT version);
+
 private:
 	Rect* body = nullptr;
 	bool isActive = false;
@@ -41,3 +44,13 @@ private:
 	const float positionLerpSpeed = 15.f;
 	float nextPosY = 0.f;
 };
+
+template<class Archive>
+inline void Swipe_Brick::serialize(Archive& ar, const UINT version)
+{
+	ar& body;
+	ar& isActive;
+	ar& hp;
+	ar& animState;
+	ar& nextPosY;
+}

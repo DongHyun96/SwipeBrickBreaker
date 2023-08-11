@@ -2,7 +2,8 @@
 class Swipe_BrickManager : public Swipe_Pool<Swipe_Brick>
 {
 public:
-	Swipe_BrickManager(UINT poolCnt = 54);
+	Swipe_BrickManager();
+	Swipe_BrickManager(UINT poolCnt);
 	~Swipe_BrickManager();
 
 	virtual void Update() override;
@@ -18,7 +19,17 @@ public:
 
 	void DestroyAllBricks();
 
+	template<class Archive>
+	void serialize(Archive& ar, const UINT version);
+
 private:
 	AnimState animState = IDLE;
 
 };
+
+template<class Archive>
+inline void Swipe_BrickManager::serialize(Archive& ar, const UINT version)
+{
+	ar& pool;
+	ar& animState;
+}

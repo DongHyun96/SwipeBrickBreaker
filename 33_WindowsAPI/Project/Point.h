@@ -39,4 +39,14 @@ struct Point
 
 	float x = 0.f;
 	float y = 0.f;
+
+	template<class Archive>
+	void serialize(Archive& ar, const UINT version);
 };
+
+template<class Archive>
+inline void Point::serialize(Archive& ar, const UINT version)
+{
+	ar& x;
+	ar& y;
+}

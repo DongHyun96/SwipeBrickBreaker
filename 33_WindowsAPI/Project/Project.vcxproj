@@ -78,10 +78,12 @@
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>Framework.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>C:\Users\wadan\Desktop\SubDeskTop\Boost\boost_1_82_0</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>C:\Users\wadan\Desktop\SubDeskTop\Boost\boost_1_82_0\stage\lib</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -94,12 +96,14 @@
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>Framework.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>C:\Users\wadan\Desktop\SubDeskTop\Boost\boost_1_82_0</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>C:\Users\wadan\Desktop\SubDeskTop\Boost\boost_1_82_0\stage\lib</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -110,10 +114,12 @@
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>Framework.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>C:\Users\wadan\Desktop\SubDeskTop\Boost\boost_1_82_0</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>C:\Users\wadan\Desktop\SubDeskTop\Boost\boost_1_82_0\stage\lib</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -126,12 +132,14 @@
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>Framework.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>C:\Users\wadan\Desktop\SubDeskTop\Boost\boost_1_82_0</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>C:\Users\wadan\Desktop\SubDeskTop\Boost\boost_1_82_0\stage\lib</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -162,7 +170,6 @@
     <ClInclude Include="Swipe_BallManager.h" />
     <ClInclude Include="Swipe_Brick.h" />
     <ClInclude Include="Swipe_BrickManager.h" />
-    <ClInclude Include="Swipe_GameData.h" />
     <ClInclude Include="Swipe_GameManager.h" />
     <ClInclude Include="Swipe_Item.h" />
     <ClInclude Include="Swipe_ItemManager.h" />
@@ -208,7 +215,6 @@
     <ClCompile Include="Swipe_BallManager.cpp" />
     <ClCompile Include="Swipe_Brick.cpp" />
     <ClCompile Include="Swipe_BrickManager.cpp" />
-    <ClCompile Include="Swipe_GameData.cpp" />
     <ClCompile Include="Swipe_GameManager.cpp" />
     <ClCompile Include="Swipe_Item.cpp" />
     <ClCompile Include="Swipe_ItemManager.cpp" />

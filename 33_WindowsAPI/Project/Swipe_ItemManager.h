@@ -2,7 +2,8 @@
 class Swipe_ItemManager : public Swipe_Pool<Swipe_Item>
 {
 public:
-	Swipe_ItemManager(UINT poolCnt = 54);
+	Swipe_ItemManager();
+	Swipe_ItemManager(UINT poolCnt);
 	~Swipe_ItemManager();
 
 	virtual void Update() override;
@@ -17,9 +18,18 @@ public:
 
 	void DestroyAllItems();
 
+	template <class Archive>
+	void serialize(Archive& ar, const UINT version);
+
 private:
 
 	AnimState animState = IDLE;
 
-
 };
+
+template<class Archive>
+inline void Swipe_ItemManager::serialize(Archive& ar, const UINT version)
+{
+	ar& pool;
+	ar& animState;
+}
