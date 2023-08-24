@@ -8,14 +8,6 @@ Swipe_ItemManager::Swipe_ItemManager()
 
 Swipe_ItemManager::Swipe_ItemManager(UINT poolCnt)
 {
-	if (Swipe_GameManager::GetInst()->PrevDataExist())
-	{
-		animState = Swipe_GameManager::GetInst()->GetGameData().itemManager->GetAnimState();
-		pool = Swipe_GameManager::GetInst()->GetGameData().itemManager->GetItems();
-
-		return;
-	}
-
 	for (UINT i = 0; i < poolCnt; i++)
 		pool.push_back(new Swipe_Item);
 }

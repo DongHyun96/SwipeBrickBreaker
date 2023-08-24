@@ -40,8 +40,12 @@ struct Swipe_GameData
 
 	~Swipe_GameData()
 	{
-	}
+		if (brickManager)
+			delete brickManager;
 
+		if (itemManager)
+			delete itemManager;
+	}
 
 	// GameManager data
 	GameState gameState;
@@ -57,7 +61,7 @@ struct Swipe_GameData
 	Swipe_ItemManager* itemManager = nullptr;
 
 	template <class Archive>
-	void serialize(Archive& ar, const UINT version)
+	void serialize(Archive& ar, const UINT version) 
 	{
 		// GameManager Data
 		ar& gameState;
@@ -69,12 +73,12 @@ struct Swipe_GameData
 		ar& brickManager; // Brick Data
 		ar& itemManager; // Item Data
 	}
+
 };
 
 class Swipe_GameManager
 {
 private:
-
 	Swipe_GameManager();
 	~Swipe_GameManager();
 
@@ -87,7 +91,6 @@ public:
 	}
 
 public:
-
 	void Update();
 
 	const GameState& GetGameState() const { return gameState; }
@@ -109,13 +112,11 @@ public:
 	void SetBestLevelReached(const UINT& level) { this->bestLevelReached = level; }
 
 public:
-
-	/// <summary> R 누를 때 재시작 시 사용  </summary>
 	void InitGame();
 
 public:
-
 	const bool& PrevDataExist() const { return prevDataExist; }
+
 	const Swipe_GameData& GetGameData() const { return gameData; }
 
 	template <class Archive>
@@ -124,7 +125,7 @@ public:
 private:
 
 	bool prevDataExist = false;
-	Swipe_GameData gameData{};
+	Swipe_GameData gameData;
 
 private:
 
