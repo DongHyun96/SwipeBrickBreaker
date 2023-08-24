@@ -16,17 +16,7 @@ public:
 	Point& Pos()		{ return pos; }
 	float& Radius()		{ return radius; }
 
-	template<class Archive>
-	void serialize(Archive& ar, const UINT version);
-
 private:
 	Point pos		= {};
 	float radius	= 0.f;
 };
-
-template<class Archive>
-inline void Circle::serialize(Archive& ar, const UINT version)
-{
-	ar& pos;
-	ar& radius;
-}

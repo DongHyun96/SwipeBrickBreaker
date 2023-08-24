@@ -45,7 +45,7 @@ static float Lerp(float src, float dst, float alpha)
 }
 
 template <typename T>
-static void SerializeData(const T& data, const char* fileName = "saved_data.bin")
+static void SerializeData(const T& data, const char& fileName = "saved_data.bin")
 {
     ofstream file(fileName, ios::binary);
 

@@ -19,17 +19,7 @@ public:
 	Point& Pos() { return pos; }
 	Point& Size() { return size; }
 
-	template<class Archive>
-	void serialize(Archive& ar, const UINT version);
-
 private:
 	Point pos	= {};
 	Point size	= {}; // width height
 };
-
-template<class Archive>
-inline void Rect::serialize(Archive& ar, const UINT version)
-{
-	ar& pos;
-	ar& size;
-}

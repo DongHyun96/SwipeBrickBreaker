@@ -26,12 +26,7 @@ public:
 	Circle* GetBody() { return body; }
 
 	AnimState GetAnimState() const { return animState; }
-
 	void SetAnimState(const AnimState& state) { this->animState = state; }
-
-	template <class Archive>
-	void serialize(Archive& ar, const UINT version);
-
 private:
 	Circle* body = nullptr;			// main body
 
@@ -53,17 +48,3 @@ private:
 	float nextPosY = 0.f;
 
 };
-
-template<class Archive>
-inline void Swipe_Item::serialize(Archive& ar, const UINT version)
-{
-	ar& body;
-	ar& inner;
-	ar& middle;
-	ar& outer;
-
-	ar& isActive;
-
-	ar& animState;
-	ar& nextPosY;
-}

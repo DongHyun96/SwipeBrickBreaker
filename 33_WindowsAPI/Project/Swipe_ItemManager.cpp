@@ -2,10 +2,6 @@
 #include "Swipe_ItemManager.h"
 
 
-Swipe_ItemManager::Swipe_ItemManager()
-{
-}
-
 Swipe_ItemManager::Swipe_ItemManager(UINT poolCnt)
 {
 	for (UINT i = 0; i < poolCnt; i++)
