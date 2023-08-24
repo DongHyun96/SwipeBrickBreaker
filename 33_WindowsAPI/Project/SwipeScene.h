@@ -47,8 +47,8 @@ private: // BALL MANAGER
 	Vector2 fireDir = {};
 
 private: // BRICK MANAGER & ITEM MANAGER
-	Swipe_BrickManager* brickManager = nullptr;
-	Swipe_ItemManager* itemManager = nullptr;
+	Swipe_BrickManager* brickManager	= nullptr;
+	Swipe_ItemManager* itemManager		= nullptr;
 
 	HFONT font = nullptr;
 };

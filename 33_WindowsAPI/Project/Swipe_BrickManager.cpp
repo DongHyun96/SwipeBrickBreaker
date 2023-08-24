@@ -8,6 +8,14 @@ Swipe_BrickManager::Swipe_BrickManager()
 
 Swipe_BrickManager::Swipe_BrickManager(UINT poolCnt)
 {
+	if (Swipe_GameManager::GetInst()->PrevDataExist())
+	{
+		animState = Swipe_GameManager::GetInst()->GetGameData().brickManager->GetAnimState();
+		pool = Swipe_GameManager::GetInst()->GetGameData().brickManager->GetBricks();
+
+		return;
+	}
+
 	for (UINT i = 0; i < SWIPE_COL_CNT * SWIPE_ROW_CNT; i++)
 	{
 		UINT x = i % SWIPE_COL_CNT;

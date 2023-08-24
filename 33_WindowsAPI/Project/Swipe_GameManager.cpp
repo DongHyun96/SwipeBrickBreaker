@@ -3,24 +3,41 @@
 
 Swipe_GameManager::Swipe_GameManager()
 {
-	Swipe_GameData loadedData;
-
 	ifstream file("data.txt");
 
 	// Check for saved data
 	if (!file.is_open())
 		return;
 
+	// Data loaded successfully
 	boost::archive::text_iarchive ia(file);
-	ia >> loadedData;
+	ia >> gameData;
 
 	file.close();
 
 	prevDataExist = true;
+
+	// Initing GameManager self - TODO (주석 풀기)
+	gameState			= gameData.gameState;
+	level				= gameData.level;
+	bestLevelReached	= gameData.bestLevelReached;
+	itemEarned			= gameData.itemEarned;
+	ballStartPos		= gameData.ballStartPos;
 }
 
 Swipe_GameManager::~Swipe_GameManager()
 {
+	if (gameData.brickManager)
+	{
+		delete gameData.brickManager;
+		gameData.brickManager = nullptr;
+	}
+
+	if (gameData.itemManager)
+	{
+		delete gameData.itemManager;
+		gameData.itemManager = nullptr;
+	}
 }
 
 void Swipe_GameManager::Update()

@@ -9,19 +9,24 @@ SwipeScene::SwipeScene() // TODO - 게임매니저에서 데이터 확인해서 받아오기
 
 	background = new Rect(WIN_CENTER, Point(WIN_WIDTH, WIN_HEIGHT));
 
-	// 게임 데이터가 남아있는지 체크
-	if (Swipe_GameManager::GetInst()->PrevDataExist())
-	{
-		
-	}
-
 	ballManager = new Swipe_BallManager;
 
-	brickManager = new Swipe_BrickManager(54);
-
-	itemManager = new Swipe_ItemManager(54);
-
 	font = Swipe_Palette::GetInst()->GetFont();
+
+	// 게임 데이터가 남아있는지 체크 - TODO (초기화할 데이터를 뽑아서 명확히 정해야 함)
+	//if (Swipe_GameManager::GetInst()->PrevDataExist())
+	//{
+	//	brickManager = Swipe_GameManager::GetInst()->GetGameData().brickManager;
+	//	itemManager = Swipe_GameManager::GetInst()->GetGameData().itemManager;
+	//}
+	//else
+	//{
+	//	brickManager = new Swipe_BrickManager(54);
+	//	itemManager = new Swipe_ItemManager(54);
+	//}
+	brickManager	= new Swipe_BrickManager(54);
+	itemManager		= new Swipe_ItemManager(54);
+
 }
 
 SwipeScene::~SwipeScene()
@@ -29,17 +34,17 @@ SwipeScene::~SwipeScene()
 	// 게임이 끝날 때 데이터 저장하기
 	ofstream file("data.txt");
 
+	Swipe_GameData data(
+		Swipe_GameManager::GetInst()->GetGameState(),
+		Swipe_GameManager::GetInst()->GetLevel(),
+		Swipe_GameManager::GetInst()->GetBestLevelReached(),
+		Swipe_GameManager::GetInst()->GetItemEarned(),
+		Swipe_GameManager::GetInst()->GetBallStartPos(),
+		brickManager, itemManager
+	);
+
 	if (file.is_open())
 	{
-		Swipe_GameData data(
-			Swipe_GameManager::GetInst()->GetGameState(),
-			Swipe_GameManager::GetInst()->GetLevel(),
-			Swipe_GameManager::GetInst()->GetBestLevelReached(),
-			Swipe_GameManager::GetInst()->GetItemEarned(),
-			Swipe_GameManager::GetInst()->GetBallStartPos(),
-			brickManager, itemManager
-		);
-		
 		boost::archive::text_oarchive oa(file);
 
 		oa << data;
@@ -54,7 +59,6 @@ SwipeScene::~SwipeScene()
 	delete ballManager;
 
 	delete brickManager;
-
 	delete itemManager;
 }
 
