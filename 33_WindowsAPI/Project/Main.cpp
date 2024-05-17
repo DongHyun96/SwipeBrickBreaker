@@ -85,6 +85,8 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
         }
     }
 
+    _CrtDumpMemoryLeaks();
+
     return (int) msg.wParam;
 }
 
